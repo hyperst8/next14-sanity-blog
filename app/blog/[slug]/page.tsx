@@ -10,6 +10,7 @@ async function getData(slug: string) {
     *[_type == "blog" && slug.current == '${slug}'] {
         "currentSlug": slug.current,
         title,
+        smallDescription,
         content,
         titleImage
         }[0]
@@ -40,6 +41,8 @@ export default async function BlogPost({
         priority
         className="mt-8 rounded-lg border"
       />
+
+      <p className="mt-6 text-lg">{data.smallDescription}</p>
 
       <div className="mt-16 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-primary">
         <PortableText value={data.content} />
