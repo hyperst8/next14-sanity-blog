@@ -28,7 +28,7 @@ export default async function BlogPost({
   const data: fullBlog = await getData(params.slug);
 
   return (
-    <div className="mt-8">
+    <div className="my-10">
       <h1 className="mt-8 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
         {data.title}
       </h1>
