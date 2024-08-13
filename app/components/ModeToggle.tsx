@@ -33,7 +33,17 @@ export function ModeToggle() {
           className="relative"
         />
       </Button>
-      {theme === "dark" ? <Moon /> : <Sun />}
+      {theme === "dark" ? (
+        <Moon
+          className="cursor-pointer"
+          onClick={() => setTheme("light")}
+        />
+      ) : (
+        <Sun
+          className="cursor-pointer"
+          onClick={() => setTheme("dark")}
+        />
+      )}
     </div>
   );
 }
