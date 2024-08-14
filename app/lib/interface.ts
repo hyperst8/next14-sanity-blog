@@ -3,6 +3,7 @@ export interface simpleBlogCard {
   smallDescription: string;
   currentSlug: string;
   titleImage: any;
+  tags: Array<Tag>;
 }
 
 export interface fullBlog {
@@ -11,4 +12,10 @@ export interface fullBlog {
   smallDescription: string;
   content: any;
   titleImage: any;
+  tags: Array<Tag>;
+}
+
+export interface Tag {
+  tagName: string;
+  currentSlug: string;
 }
