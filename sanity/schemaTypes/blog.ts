@@ -26,6 +26,14 @@ export default {
       // options: {
       //     hotspot: true,
       // },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alt',
+          type: 'string',
+          validation: (Rule: any) => Rule.required(),
+        },
+      ],
     },
     {
       name: 'smallDescription',

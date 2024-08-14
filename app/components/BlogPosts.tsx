@@ -29,7 +29,7 @@ export default async function BlogPosts() {
         <Card key={idx}>
           <Image
             src={urlFor(post.titleImage).url()}
-            alt={post.title}
+            alt={post.titleImage.alt}
             width={500}
             height={500}
             className="rounded-t-lg h-[200px] object-cover"
