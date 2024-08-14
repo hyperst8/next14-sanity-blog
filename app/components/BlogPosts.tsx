@@ -11,7 +11,11 @@ async function getData() {
       title,
         smallDescription,
         "currentSlug": slug.current,
-        titleImage
+        titleImage,
+        tags[]-> {
+          "currentSlug": slug.current,
+          tagName
+        }
     }
     `;
 
@@ -39,6 +43,16 @@ export default async function BlogPosts() {
             <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
               {post.smallDescription}
             </p>
+            <div className="flex gap-2 mt-2">
+              {post.tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="font-bold text-xs text-gray-500 dark:text-gray-300"
+                >
+                  #{tag.tagName}
+                </span>
+              ))}
+            </div>
             <Button
               asChild
               className="w-full mt-7"

@@ -12,7 +12,11 @@ async function getData(slug: string) {
         title,
         smallDescription,
         content,
-        titleImage
+        titleImage,
+        tags[]-> {
+            "currentSlug": slug.current,
+            tagName
+          }
         }[0]
     `;
   const data = await client.fetch(query);
@@ -43,6 +47,17 @@ export default async function BlogPost({
       />
 
       <p className="mt-6 text-lg">{data.smallDescription}</p>
+
+      <div className="flex gap-2 mt-2">
+        {data.tags.map((tag, idx) => (
+          <span
+            key={idx}
+            className="mt-8 font-bold text-small text-gray-500 dark:text-gray-300"
+          >
+            #{tag.tagName}
+          </span>
+        ))}
+      </div>
 
       <div className="mt-16 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-primary">
         <PortableText value={data.content} />
