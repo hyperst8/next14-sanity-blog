@@ -49,5 +49,12 @@ export default {
       of: [{type: 'block'}],
       validation: (Rule: any) => Rule.required(),
     },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'tag'}}],
+      // validation: (Rule: any) => Rule.required(),
+    },
   ],
 }
